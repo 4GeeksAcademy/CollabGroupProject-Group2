@@ -26,12 +26,12 @@ export const Profile = () => {
             					</div>
             					<div className="ms-3" style={{marginTop: "130px",}}>
               						<h5>Andy Horwitz</h5>
-              						<p>New York</p>
+              						<p className="text-start fw-lighter">New York</p>
             					</div>
           					</div>
           			<div className="p-4 text-black" style={{backgroundColor: "#f8f9fa",}}>
             			<div className="d-flex justify-content-end text-center py-1">
-              				<div>
+              				{/* <div>
                 				<p className="mb-1 h5">253</p>
                 				<p className="small text-muted mb-0">Photos</p>
               				</div>
@@ -42,20 +42,21 @@ export const Profile = () => {
               				<div>
                 				<p className="mb-1 h5">478</p>
                 				<p className="small text-muted mb-0">Following</p>
-              				</div>
+              				</div> */}
             			</div>
           			</div>
           				<div className="card-body p-4 text-black">
             				<div className="mb-5">
-              					<p className="lead fw-normal mb-1">About</p>
+              					<p className="lead fw-normal mb-1 text-start text-decoration-underline">ABOUT
+								</p>
               					<div className="p-4" style={{backgroundColor: "#f8f9fa",}}>
-                					<p className="font-italic mb-1">Web Developer</p>
-                					<p className="font-italic mb-1">Lives in New York</p>
-                					<p className="font-italic mb-0">Photographer</p>
+                					<p className="fs-6 fw-lighter mb-1 text-start lh-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Dictum varius duis at consectetur lorem donec. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Est ullamcorper eget nulla facilisi etiam dignissim diam quis. Auctor urna nunc id cursus metus. Consectetur libero id faucibus nisl tincidunt eget. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. Nec dui nunc mattis enim ut tellus elementum sagittis. Imperdiet sed euismod nisi porta lorem. Ullamcorper eget nulla facilisi etiam dignissim diam. Vel fringilla est ullamcorper eget nulla facilisi. Arcu felis bibendum ut tristique et egestas quis. Porta lorem mollis aliquam ut. Phasellus faucibus scelerisque eleifend donec pretium. Donec ultrices tincidunt arcu non sodales neque sodales. Auctor augue mauris augue neque gravida in. Viverra nam libero justo laoreet sit amet cursus.</p>
+                					{/* <p className="font-italic mb-1">Lives in New York</p>
+                					<p className="font-italic mb-0">Photographer</p> */}
               					</div>
             				</div>
             					<div className="d-flex justify-content-between align-items-center mb-4">
-              						<p className="lead fw-normal mb-0">Recent photos</p>
+              						<p className="lead fw-normal mb-0 text-decoration-underline">FAVORITES</p>
               						<p className="mb-0"><a href="#!" className="text-muted">Show all</a></p>
             					</div>
             						<div className="row g-2">
