@@ -19,7 +19,7 @@ export const Exhibits = () => {
 				{artPieces.map(item => (
 					
 				<div className="rowExhibit ">
-					<div className="card" style={{width: "18rem", height: "420px"}}>
+					<div className="card" style={{width: "18rem", height: "420px", boxShadow: "10px 10px 20px 21px rgba(0, 0, 0, 0.2)",}}>
 						<Link to={`single/${item.objectID}`}>
   							<img src={item.primaryImageSmall} className="card-img-top" width="18rem" height="320px" onError= {(e)=>{e.target.src = fallBackURL}} alt={item.objectName} />
 						</Link>
