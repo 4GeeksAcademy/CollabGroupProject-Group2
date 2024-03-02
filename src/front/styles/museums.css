@@ -1,128 +1,79 @@
-/* .footer {
-    flex-shrink: 0;
-    bottom: 0;
-    background-color: 
-    #29627D;
- 
-  }
-
-  .navbar {
-    background-color: 
-    #29627D;
-    justify-content: flex-start;
-  }
-
-
-
-.navbar-logo {
-    width: 100px;
-    height: 100px;
-    padding-right: 1%;
-}
-
-.jumbotron{
-    display: flex;
-    text-align: center;
-    justify-content: space-around;
-    margin: auto;
-    padding: 20% 47%;
-    height: 10px;
-    width: 200px;
-    border: 2px black solid;
-}
-
-.history {
-    font-size: 8px;
-    border: 2px black solid;
-    margin: 5px;
-    width: 100%;   
-}
-
-.history-title {
-    text-decoration: underline;
-    margin: 25px;
-} */
-
-/* here */
-
-/* .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 2px solid #000;
-    z-index: 1000; /* Ensure it's above other content */
-
-
-/* .popup-inner {
-    max-width: 600px;
-    overflow-y: auto;
-}
-
-.popup-inner button {
-    display: block;
-    margin: 0 auto;
-} */ 
-
-/* test */
 .content-container {
-    padding-bottom: 50px; /* Adds space at the bottom inside the container */
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 50px auto 0; /* Increased top margin */
+    max-width: 1200px;
 }
 
 .image-frame-container {
+    flex: 1 1 300px;
     display: flex;
     justify-content: center;
-    margin-bottom: 50px; /* Adds space below the image container */
+    align-items: center;
+    max-width: 400px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    position: relative; /* Needed for absolute positioning of the popup */
 }
 
 .image-frame {
     border: 5px solid black;
-    display: inline-block;
-    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
 }
 
 .image-frame img {
-    width: 200px; /* Adjust width as needed */
-    height: auto;
+    width: 100%;
+    height: 250px;
     display: block;
-}
-
-.image-title {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: white;
-    padding: 5px 10px;
-    border-top: 2px solid #000;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
+    object-fit: cover;
 }
 
 .popup {
-    position: fixed;
-    top: 50%;
+    position: absolute; /* Absolute position relative to the image frame container */
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     background-color: white;
     padding: 20px;
-    z-index: 1000;
+    z-index: 2; /* Higher than the image z-index to overlay on top */
     border: 2px solid #000;
-    max-width: 600px;
+    width: 80%; /* Adjust width as necessary */
+    box-sizing: border-box;
     overflow-y: auto;
+    display: none; /* Hide popup initially */
 }
 
-.popup-inner h3 {
-    margin-bottom: 20px;
+.show-popup {
+    display: block; /* Show popup when a class is added */
 }
 
-.popup-inner p {
-    margin-bottom: 40px;
+.popup-close-button {
+    cursor: pointer;
+    z-index: 10; /* Make sure it's on top of other elements */
+    padding: 10px 20px;
+    border: none;
+    background-color: #f00;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px; /* Spacing from the popup content */
+    text-align: center;
+    display: inline-block; /* To enable margin auto to work */
 }
 
-.popup-inner button {
-    display: inline-block;
-    margin: 0 auto;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .image-frame-container {
+        margin: 10px 0;
+    }
 }
