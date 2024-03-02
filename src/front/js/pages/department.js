@@ -10,9 +10,35 @@ export const Department = props => {
     let artPieces = store.artPieces.filter(item => item.department == params.thedepartment)
 	return (
         <div>
-            {artPieces.map((item) => {
+            <p>this is the indiviual department page</p>
+            <div> 
+				{artPieces.map(item => (
+					<div className="rowExhibit">
+					<Link to={`single/${item.objectID}`}>
+						<div className="art-poster">
+							<img className="w-100" src={item.primaryImageSmall} onError= {(e)=>{e.target.src = fallBackURL}} alt = {item.objectName} />
+							<p>{item.title} </p>
+						</div>
+					</Link>
+					<Link to={`single/${item.objectID}`}>
+						<div className="art-poster">
+							<img className="w-100" src={item.primaryImageSmall} onError= {(e)=>{e.target.src = fallBackURL}} alt = {item.objectName} />
+							<p>{item.title} </p>
+						</div>
+					</Link>
+					<Link to={`single/${item.objectID}`}>
+						<div className="art-poster">
+							<img className="w-100" src={item.primaryImageSmall} onError= {(e)=>{e.target.src = fallBackURL}} alt = {item.objectName} />
+							<p>{item.title} </p>
+						</div>
+					</Link>
+					</div>
+						
+					))}	
+			</div>
+            {/* {artPieces.map((item) => {
                 <p>{item.displayName}</p>
-            })}
+            })} */}
         </div>
         
     )
