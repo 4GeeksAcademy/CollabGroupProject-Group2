@@ -39,8 +39,12 @@
     border: 10px solid black;
     padding: 75px 50px;
     margin-top: 10px;
+    background-image: url(https://as1.ftcdn.net/v2/jpg/02/77/30/98/1000_F_277309825_h8RvZkoyBGPDocMtippdfe3497xTrOXO.jpg);
 }
-.row1 {
-    background-image: url(https://cdn.pixabay.com/photo/2017/02/15/20/33/floral-2069810_1280.png);
+.rowDepartments {
+    
     margin: 100px;
+    zoom: 110%;
+    
 }
+

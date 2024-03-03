@@ -16,6 +16,7 @@ export const Departments = () => {
 	
 	useEffect(() => {
 		setArtDepartments(store.artDepartments)
+		console.log(artDepartments);
 	},[store.artDepartments])
 
 	// console.log(artDepartments);
@@ -23,13 +24,15 @@ export const Departments = () => {
 	
 	<AuthComponent>
 		<div className="text-center mt-5">
-			<p>This is the department page</p>
-			<div className="row1"> 
+			<h1 className="seven" >DEPARTMENTS</h1>
+			<div className="rowDepartments"> 
 				{artDepartments.map(item => (
-					<div className="art-Poster">
-						{/* {console.log(item)} */}
-						<p>{item.displayName} </p>
-					</div>
+					<Link to={`/department/${item.departmentId}`}>
+						<div className="art-Poster">
+							{/* {console.log(item)} */}
+							<p>{item.displayName} </p>
+						</div>
+					</Link>
 					
 				))}
 			</div>

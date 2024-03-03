@@ -31,7 +31,7 @@
 
 
 
-.row1 {
+.rowExhibit {
     display: flex;
     text-align: center;
     justify-content: space-between;
@@ -42,66 +42,29 @@
 
 }
 
-.row2 {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    margin: 45px 75px;
-}
 
-.row3 {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    margin: 45px 75px;
-}
 
 .art-poster {
     border: 10px solid black;
     padding: 75px 50px;
-    width: 33%;
+    width: 65%;
+    
 }
 
 .art-poster img {
     object-fit: contain;
 }
 
-.art-poster-2 {
-    border: 10px solid black;
-    padding: 75px 50px;
+.card-body {
+    display: flex;
+}
+.card-text {
+    text-align: left;
 }
 
-.art-poster-3 {
-    border: 10px solid black;
-    padding: 75px 50px;
+button {
+    font-size: 10px;
+    height: 50%;
+    margin-left: 100px;
 }
 
-.art-poster-4 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}
-
-.art-poster-5 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}
-
-.art-poster-6 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}
-
-.art-poster-7 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}
-
-.art-poster-8 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}
-
-.art-poster-9 {
-    border: 10px solid black;
-    padding: 75px 50px;
-}

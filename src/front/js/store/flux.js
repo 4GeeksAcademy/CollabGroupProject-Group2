@@ -54,7 +54,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		}, 
 			
 		getObjects: () => {
-			for (let i = 1000; i < 1075; i++){
+			for (let i = 438815; i < 438899; i++){
 				fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/"+i)
 				.then(response => response.json())
 				.then(data => {
