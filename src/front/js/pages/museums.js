@@ -10,9 +10,8 @@ export const Museums = () => {
         comingSoon2: false,
     });
 
-    // Adjusted togglePopup function
     const togglePopup = (popupName, event) => {
-        if (event) event.stopPropagation(); // Prevents event bubbling if event is provided
+        if (event) event.stopPropagation();
         setShowPopup(prev => ({
             ...prev,
             [popupName]: !prev[popupName],
@@ -21,10 +20,10 @@ export const Museums = () => {
 
     return (
         <div className="content-container">
-            {/* Jumbotron Image */}
+            {/* Jumbotron Image with lazy loading */}
             <div className="image-frame-container">
                 <div className="image-frame" onClick={() => togglePopup('jumbotron')}>
-                    <img src={Jumbotron} alt="Museum Jumbotron" />
+                    <img src={Jumbotron} alt="Museum Jumbotron" loading="lazy" />
                     {showPopup.jumbotron && (
                         <div className="popup show-popup">
                             <h3>The Metropolitan Museum of Art</h3>
@@ -37,10 +36,10 @@ export const Museums = () => {
                 </div>
             </div>
 
-            {/* Coming Soon 1 Image */}
+            {/* Coming Soon 1 Image with lazy loading */}
             <div className="image-frame-container">
                 <div className="image-frame" onClick={() => togglePopup('comingSoon1')}>
-                    <img src={comingsoon} alt="Coming Soon" />
+                    <img src={comingsoon} alt="Coming Soon" loading="lazy" />
                     {showPopup.comingSoon1 && (
                         <div className="popup show-popup">
                             <h3>Check Back For Updates</h3>
@@ -51,10 +50,10 @@ export const Museums = () => {
                 </div>
             </div>
 
-            {/* Coming Soon 2 Image */}
+            {/* Coming Soon 2 Image with lazy loading */}
             <div className="image-frame-container">
                 <div className="image-frame" onClick={() => togglePopup('comingSoon2')}>
-                    <img src={comingsoon} alt="Coming Soon" />
+                    <img src={comingsoon} alt="Coming Soon" loading="lazy" />
                     {showPopup.comingSoon2 && (
                         <div className="popup show-popup">
                             <h3>Check Back For Updates</h3>
@@ -67,4 +66,3 @@ export const Museums = () => {
         </div>
     );
 };
-
