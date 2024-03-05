@@ -70,25 +70,34 @@ const Login = ({ setAuthAttempt }) => {
         />
       </div>
       {/* Password Ends */}
-      <div className="row">
-          <div className='col p-3'>
-            {/* <Link> */}
-            <Link to ="/signup">
-          SIGN UP
-        </Link>
-            {/* </Link */}
+
+
+
+      <div className='container-fluid'>
+          <div className="row mb-5">
+              <div className='col-8 mt-3'>
+                {/* <Link> */}
+                <Link to ="/signup">
+              SIGN UP
+            </Link>
+                {/* </Link */}
+              </div>
+          <div className="col m-3 text-end mb-4">
+          {message}
+            <button  className="btn btn-outline-primary text-end" onClick={async ()=>{
+              await actions.onLoginClick(email, password)
+              await loginRedirection(actions.redirecting());
+              }}>
+                Login 
+            </button>
+            
           </div>
-      <div className="col text-end p-3">
-        {message}
-        <button className="btn btn-primary" onClick={async ()=>{
-          await actions.onLoginClick(email, password) 
-          await loginRedirection(actions.redirecting());
-          }}>
-          Login
-        </button>
-        
+          </div>
       </div>
-      </div>
+      
+
+
+
     </div>
   );
 };

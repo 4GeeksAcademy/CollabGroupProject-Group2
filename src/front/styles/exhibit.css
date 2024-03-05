@@ -62,9 +62,10 @@
     text-align: left;
 }
 
-button {
+.exhibit-button {
     font-size: 10px;
-    height: 50%;
+    /* color: red; */
+    height: 75%;
     margin-left: 100px;
 }
 

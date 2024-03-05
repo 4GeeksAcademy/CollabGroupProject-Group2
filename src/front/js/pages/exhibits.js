@@ -23,7 +23,7 @@ export const Exhibits = () => {
 						<Link to={`single/${item.objectID}`}>
   							<img src={item.primaryImageSmall} className="card-img-top" width="18rem" height="320px" onError= {(e)=>{e.target.src = fallBackURL}} alt={item.objectName} />
 						</Link>
-  								<div className="card-body overflow-auto">
+  								<div className="card-body overflow-auto mb-2">
     								<p className="card-text" style={{fontSize: "x-small"}}>{item.title}</p>
 									<button className="exhibit-button" onClick=""><i class="fas fa-heart" aria-hidden="true"></i></button>
   								</div>
