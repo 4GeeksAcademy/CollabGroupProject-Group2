@@ -7,19 +7,19 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="">
+		<div className="backgroundHome">
 			<div className="container-fluid">
   				
 				<div className="row">
     				<div className="col-md-12 text-center">
-     			 		<h3 className="animate-charcter"> ArtSeekers</h3>
+     			 		<h3 className="animate-charcter">ArtSeekers</h3>
     				</div>
   				</div>
 
-				<div className="row" id="about-us">
+				<div className="rowAboutUs" id="about-us">
 					<div className="info">
-						<h2>About Us</h2>
-					<p>Welcome to ArtSeekers, the digital sanctuary for art enthusiasts and connoisseurs alike. Our platform is more than just a gallery; it's a vibrant community where the masterpieces of the world are at your fingertips, waiting to be explored, rated, and favorited.</p>
+						
+					<h2>Welcome ArtSeekers,</h2> <p>to the digital sanctuary for art enthusiasts and connoisseurs alike. Our platform is more than just a gallery; it's a vibrant community where the masterpieces of the world are at your fingertips, waiting to be explored, rated, and favorited.</p>
 
 <p>At ArtSeekers, we believe that art is a universal language that transcends boundaries and connects souls. That's why we've dedicated ourselves to creating an accessible space where the beauty and history of world-class art pieces can be shared and celebrated by everyone, from seasoned art historians to those just beginning their journey into the art world.</p>
 
@@ -35,22 +35,22 @@ export const Home = () => {
 				</div>
 
 				<div className="row" id="list">
-					<h1 className="features">Features</h1>
+					{/* <h1 className="features">Features</h1> */}
 				<div contenteditable>
 
-  				<div className="line1">
+  				<div className="lineHome">
 					View world-class pieces of art
 				</div>
 
-  				<div className="line2">
+  				<div className="lineHome">
     				Rate the pieces of art on a scale of 1-5 stars
   				</div>
 
-				<div className="line3">
+				<div className="lineHome">
     				If you love a specific piece of art 'favorite' it and it will save to your profile
   				</div>
 
-				<div className="line4">
+				<div className="lineHome">
     				Future iterations will recommend museums based on your ratings and favorites
   				</div>
 
