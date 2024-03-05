@@ -1,12 +1,12 @@
 .animate-charcter
 {
-   text-transform: uppercase;
+  
   background-image: linear-gradient(
     -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
+    #1078ce 0%,
+    #0b4877 29%,
+    #e79c08 67%,
+    #DEB887 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -19,6 +19,7 @@
   animation: textclip 2s linear infinite;
   display: inline-block;
       font-size: 190px;
+      margin-top: 55px;
 }
 
 @keyframes textclip {
@@ -60,7 +61,7 @@
       }
       div div {
         position: relative;
-        background-color: #29627d;
+        background-color: burlywood;
         color: #fff;
         margin: 16px;
         border-radius: 999px;
@@ -75,4 +76,21 @@
         display: none;
       }
       
+}
+
+.rowAboutUs {
+  margin: 100px;
+  background-color: rgba(222, 184, 135, 0.7);
+  padding: 50px;
+  border: 15px solid black;
+  box-shadow: 10px 10px 20px rgba(17, 165, 201, 0.4);
+}
+
+.backgroundHome {
+  background-image: url(https://64.media.tumblr.com/d307e7b2d350aac140ab2605ffa80c11/tumblr_ou89v41vtr1s0e6wno1_500.jpg);
+  background-size: 100%;
+}
+
+.lineHome {
+  background-color: burlywood;
 }

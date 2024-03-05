@@ -28,13 +28,16 @@ export const Departments = () => {
 			<div className="rowDepartments"> 
 				{artDepartments.map(item => (
 					<Link to={`/department/${item.departmentId}`}>
-						<div className="art-Poster">
-							{/* {console.log(item)} */}
-							<p>{item.displayName} </p>
+						<div className="art-Poster text-start">
+						<button type="button" className="btn btn-warning">{item.displayName} </button>
 						</div>
 					</Link>
-					
 				))}
+				<div className="departmentExamples">
+					<div className="example"></div>
+					<div className="example"></div>
+					<div className="example"></div>
+				</div>
 			</div>
 		</div>
 	</AuthComponent>	
