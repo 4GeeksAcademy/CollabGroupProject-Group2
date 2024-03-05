@@ -11,7 +11,7 @@ export const Departments = () => {
 	const [artDepartments , setArtDepartments] = useState([])
 	
 	useEffect(()=>{
-			actions.getDepartments()
+			actions.getArtPiecesAndDepartments()
 	},[])
 	
 	useEffect(() => {
@@ -27,9 +27,9 @@ export const Departments = () => {
 			<h1 className="seven" >DEPARTMENTS</h1>
 			<div className="rowDepartments"> 
 				{artDepartments.map(item => (
-					<Link to={`/department/${item.departmentId}`}>
+					<Link to={`/department/${item.department_museum_id}`}>
 						<div className="art-Poster text-start">
-						<button type="button" className="btn btn-warning">{item.displayName} </button>
+						<button type="button" className="btn btn-warning">{item.name} </button>
 						</div>
 					</Link>
 				))}

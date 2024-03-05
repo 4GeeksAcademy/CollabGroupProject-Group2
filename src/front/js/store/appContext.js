@@ -22,8 +22,8 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
-			state.actions.getObjects()
-			state.actions.getDepartments()
+			state.actions.getArtPiecesAndDepartments()
+			
 			state.actions.rehydrate()
 		}, []);
 
