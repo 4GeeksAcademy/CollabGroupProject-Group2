@@ -151,27 +151,25 @@ const getState = ({ getStore, getActions, setStore }) => {
                 sessionStorage.clear();
             },
 
-            getObjects: () => {
-                for (let i = 438815; i < 438899; i++) {
-                    fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${i}`)
+            getArtPiecesAndDepartments: () => {
+                    fetch(`${process.env.BACKEND_URL}/api/exhibits-and-departments`)
                         .then(response => response.json())
                         .then(data => {
-                            if (data.objectName && data.primaryImageSmall) {
-                                const store = getStore();
-                                store.artPieces.push(data);
-                                setStore({ artPieces: store.artPieces });
-                            }
+                            const store = getStore();
+                            store.artPieces = data.exhibits;
+                            store.artDepartments = data.departments
+                            setStore(store);
+                            
                         });
-                }
             },
 
-            getDepartments: () => {
-                fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
-                    .then(response => response.json())
-                    .then(data => {
-                        setStore({ artDepartments: data.departments });
-                    });
-            },
+            // getDepartments: () => {
+            //     fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             setStore({ artDepartments: data.departments });
+            //         });
+            // },
 
             usersFavoritePage: async () => {
                 const store = getStore();

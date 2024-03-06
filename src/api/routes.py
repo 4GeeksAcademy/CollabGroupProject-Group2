@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Favorite
+from api.models import db, User, Exhibits,Departments
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
@@ -76,10 +76,42 @@ def private():
     user=User.query.filter_by(email=email).first()
     if user:
         
-        favorites = Favorite.query.filter_by(user_id=user.id).all()
+        # favorites = Favorite.query.filter_by(user_id=user.id).all()
         response_body = {
             "message": f"Logged in as: {user.email} Secret view. shhhh it's a secret",
             "email": user.email,
-            "favorites": list(map(lambda x: x.serialize(), favorites))
+            # "favorites": list(map(lambda x: x.serialize(), favorites))
         }
     return jsonify(response_body), 200
+
+@api.route('/exhibits-and-departments', methods=['GET'])
+def exhibits():  
+    exhibits = Exhibits.query.all()
+    departments = Departments.query.all()
+    serialized_exhibits = [exhibit.serialize() for exhibit in exhibits]
+    serialized_departments = [department.serialize() for department in departments]
+    for exhibit in serialized_exhibits:
+        for department in serialized_departments:
+            if exhibit['department_museum_id'] == department['department_museum_id']:
+                exhibit["department_name"] = department["name"]
+    return jsonify({'message' : 'This is the list of all the exhibits', 'exhibits' : serialized_exhibits, 'departments' : serialized_departments} ),200
+
+@api.route('/getUsers', methods=['GET'])
+def get_all_Users(): 
+
+    users = User.query.all()
+    request_body = list(map(lambda x:x.serialize(), users))
+
+    return jsonify(request_body), 200
+
+# @api.route('/single_object/<int:exhibits_id>', methods=['GET'])
+# def single_exhibit():
+
+# @api.route('/single_department/<int:museums_department.id>', methods=['GET'])
+# def single_exhibit():
+
+# @api.route('/addFavorite', methods=['POST'])
+# def addFavorite():  
+
+# @api.route('/deleteFavorite', methods=['DELETE'])
+# def deleteFavorite():  
