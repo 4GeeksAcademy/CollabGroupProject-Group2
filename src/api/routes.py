@@ -84,11 +84,7 @@ def private():
         }
     return jsonify(response_body), 200
 
-# @api.route('/single_object/<int:exhibits_id>', methods=['GET'])
-# def single_exhibit():
-
 @api.route('/exhibits-and-departments', methods=['GET'])
-@jwt_required()
 def exhibits():  
     exhibits = Exhibits.query.all()
     departments = Departments.query.all()
@@ -100,9 +96,16 @@ def exhibits():
                 exhibit["department_name"] = department["name"]
     return jsonify({'message' : 'This is the list of all the exhibits', 'exhibits' : serialized_exhibits, 'departments' : serialized_departments} ),200
 
+@api.route('/getUsers', methods=['GET'])
+def get_all_Users(): 
 
-# @api.route('/departments', methods=['GET'])
-# def departments():  
+    users = User.query.all()
+    request_body = list(map(lambda x:x.serialize(), users))
+
+    return jsonify(request_body), 200
+
+# @api.route('/single_object/<int:exhibits_id>', methods=['GET'])
+# def single_exhibit():
 
 # @api.route('/single_department/<int:museums_department.id>', methods=['GET'])
 # def single_exhibit():
@@ -112,11 +115,3 @@ def exhibits():
 
 # @api.route('/deleteFavorite', methods=['DELETE'])
 # def deleteFavorite():  
-
-@api.route('/getUsers', methods=['GET'])
-def get_all_Users(): 
-
-    users = User.query.all()
-    request_body = list(map(lambda x:x.serialize(), users))
-
-    return jsonify(request_body), 200

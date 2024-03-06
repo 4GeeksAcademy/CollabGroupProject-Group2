@@ -21,7 +21,7 @@ export const Exhibits = () => {
 				<div className="rowExhibit ">
 					<div className="card" style={{width: "18rem", height: "420px", boxShadow: "10px 10px 20px 21px rgba(0, 0, 0, 0.2)", border:"15px solid black"}}>
 						<Link to={`single/${item.exhibit_museum_id}`}>
-  							<img src={item.primaryImageSmall} className="card-img-top" width="18rem" height="320px" onError= {(e)=>{e.target.src = fallBackURL}} alt={item.exhibit_name} />
+  							<img src={item.primary_image_small} className="card-img-top" width="18rem" height="320px" onError= {(e)=>{e.target.src = fallBackURL}} alt={item.exhibit_name} />
 						</Link>
   								<div className="card-body overflow-auto mb-2">
     								<p className="card-text" style={{fontSize: "x-small"}}>{item.exhibit_name}</p>

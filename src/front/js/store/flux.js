@@ -152,18 +152,12 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
 
             getArtPiecesAndDepartments: () => {
-                let opts = {
-                    headers: {
-                        Authorization: `Bearer ${sessionStorage.getItem("token")}`
-                    }
-                }
-                    fetch(`${process.env.BACKEND_URL}/api/exhibits-and-departments`,opts)
+                    fetch(`${process.env.BACKEND_URL}/api/exhibits-and-departments`)
                         .then(response => response.json())
                         .then(data => {
-                           
                             const store = getStore();
-                            store.artPieces.push(data.exhibits);
-                            store.artDepartments.push(data.departments)
+                            store.artPieces = data.exhibits;
+                            store.artDepartments = data.departments
                             setStore(store);
                             
                         });

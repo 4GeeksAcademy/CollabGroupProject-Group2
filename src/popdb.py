@@ -38,7 +38,7 @@ with app.app_context():
             object_url = f'https://collectionapi.metmuseum.org/public/collection/v1/objects/{object_id}'
             object_response = make_api_request(object_url)
 
-            if object_response.get("title") and object_response.get("primaryImageSmall"):
+            if object_response.get("title") and object_response.get("primaryImageSmall") and len(object_response.get("title")) < 250:
                 exhibit_data = {
                     "exhibit_museum_id": object_response["objectID"],
                     "exhibit_name": object_response["title"],
