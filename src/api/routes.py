@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Exhibits,Departments
+from api.models import db, User, Exhibits, Departments
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
 from flask_jwt_extended import create_access_token, get_jwt_identity, jwt_required
@@ -75,13 +75,13 @@ def private():
     email = get_jwt_identity()
     user=User.query.filter_by(email=email).first()
     if user:
-        
         # favorites = Favorite.query.filter_by(user_id=user.id).all()
         response_body = {
             "message": f"Logged in as: {user.email} Secret view. shhhh it's a secret",
             "email": user.email,
             # "favorites": list(map(lambda x: x.serialize(), favorites))
         }
+
     return jsonify(response_body), 200
 
 @api.route('/exhibits-and-departments', methods=['GET'])
@@ -94,24 +94,67 @@ def exhibits():
         for department in serialized_departments:
             if exhibit['department_museum_id'] == department['department_museum_id']:
                 exhibit["department_name"] = department["name"]
+
     return jsonify({'message' : 'This is the list of all the exhibits', 'exhibits' : serialized_exhibits, 'departments' : serialized_departments} ),200
 
 @api.route('/getUsers', methods=['GET'])
-def get_all_Users(): 
-
+def get_all_Users():
     users = User.query.all()
     request_body = list(map(lambda x:x.serialize(), users))
 
     return jsonify(request_body), 200
 
-# @api.route('/single_object/<int:exhibits_id>', methods=['GET'])
-# def single_exhibit():
+@api.route('/getSingleUser/<int:user_id>', methods=['GET'])
+@jwt_required()
+def get_Single_User(user_id): 
+    user = User.query.filter_by(id = user_id).first()
+    request_body = user.serialize()
 
-# @api.route('/single_department/<int:museums_department.id>', methods=['GET'])
-# def single_exhibit():
+    return jsonify(request_body), 200
 
-# @api.route('/addFavorite', methods=['POST'])
-# def addFavorite():  
+@api.route('/single/<int:exhibit_id>', methods=['GET'])
+@jwt_required()
+def single_exhibit(exhibit_id):
+    exhibit = Exhibits.query.filter_by(id = exhibit_id).first()
+    request_body = exhibit.serialize()
 
-# @api.route('/deleteFavorite', methods=['DELETE'])
-# def deleteFavorite():  
+    return jsonify(request_body), 200
+
+
+@api.route('/single_department/<int:museums_department_id>', methods=['GET'])
+@jwt_required()
+def single_department(museums_department_id):
+    department = Departments.query.filter_by(id = museums_department_id).first()
+    request_body = department.serialize()
+
+    return jsonify(request_body), 200
+
+@api.route('/addFavorite/<int:exhibit_id>', methods=['POST'])
+@jwt_required()
+def addFavorite(exhibit_id):
+    email = get_jwt_identity()
+    user=User.query.filter_by(email=email).first()
+    exhibit = Exhibits.query.filter_by(id=exhibit_id).first()
+    user.favorites.append(exhibit)
+    db.session.merge(user)
+    db.session.commit()
+    db.session.refresh(user)
+
+    return jsonify(user.serialize()), 200
+
+@api.route('/deleteFavorite/<int:exhibit_id>', methods=['DELETE'])
+@jwt_required()
+def deleteFavorite(exhibit_id):  
+    email = get_jwt_identity()
+    user=User.query.filter_by(email=email).first()
+    user.favorites = list(filter(
+      lambda x: x.id != exhibit_id,
+       user.favorites
+    ))
+    db.session.merge(user)
+    db.session.commit()
+    db.session.refresh(user)
+
+    return jsonify(user.serialize()), 200
+    
+
