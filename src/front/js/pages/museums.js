@@ -19,48 +19,59 @@ export const Museums = () => {
     };
 
     return (
-        <div className="content-container">
-            {/* Jumbotron Image with lazy loading */}
-            <div className="image-frame-container">
-                <div className="image-frame" onClick={() => togglePopup('jumbotron')}>
-                    <img src={Jumbotron} alt="Museum Jumbotron" loading="lazy" />
-                    {showPopup.jumbotron && (
-                        <div className="popup show-popup">
-                            <h3>The Metropolitan Museum of Art</h3>
-                            <h6>New York, New York</h6>
-                            <h4>History of the MET</h4>
-                            <p>The Metropolitan Museum of Art's earliest roots date back to 1866 in Paris, France...</p>
-                            <button className="popup-close-button" onClick={(e) => togglePopup('jumbotron', e)}>Close</button>
-                        </div>
-                    )}
-                </div>
+        <div className="parent-container"> 
+            <div className="heading">
+                <h1>Our Featured Museums</h1>
+                <h6>Click each museum to learn more!</h6>
             </div>
-
-            {/* Coming Soon 1 Image with lazy loading */}
-            <div className="image-frame-container">
-                <div className="image-frame" onClick={() => togglePopup('comingSoon1')}>
-                    <img src={comingsoon} alt="Coming Soon" loading="lazy" />
-                    {showPopup.comingSoon1 && (
-                        <div className="popup show-popup">
-                            <h3>Check Back For Updates</h3>
-                            <h5>Our next museum will be revealed soon!</h5>
-                            <button className="popup-close-button" onClick={(e) => togglePopup('comingSoon1', e)}>Close</button>
-                        </div>
-                    )}
+            <div className="content-container">
+                {/* Jumbotron Image */}
+                <div className="image-frame-container">
+                    <div className="image-frame" onClick={() => togglePopup('jumbotron')}>
+                        <img src={Jumbotron} alt="Museum Jumbotron" loading="lazy" />
+                        {showPopup.jumbotron && (
+                            <div className="popup show-popup">
+                                <h3>The Metropolitan Museum of Art</h3>
+                                <h6>New York, New York</h6>
+                                <h4>The Met Facts</h4>
+                                <li>
+                                    <ul>Founded in 1870</ul>
+                                    <ul>Home to over 2 million works of art</ul>
+                                    <ul>Collection is estimated to be worth over $50 billion dollars</ul>
+                                    <ul>Had over 3.2 million visitors in 2022</ul>
+                                </li>
+                                <button className="popup-close-button" onClick={(e) => togglePopup('jumbotron', e)}>Close</button>
+                            </div>
+                        )}
+                    </div>
                 </div>
-            </div>
 
-            {/* Coming Soon 2 Image with lazy loading */}
-            <div className="image-frame-container">
-                <div className="image-frame" onClick={() => togglePopup('comingSoon2')}>
-                    <img src={comingsoon} alt="Coming Soon" loading="lazy" />
-                    {showPopup.comingSoon2 && (
-                        <div className="popup show-popup">
-                            <h3>Check Back For Updates</h3>
-                            <h5>Our next museum will be revealed soon!</h5>
-                            <button className="popup-close-button" onClick={(e) => togglePopup('comingSoon2', e)}>Close</button>
-                        </div>
-                    )}
+                {/* Coming Soon 1 Image */}
+                <div className="image-frame-container">
+                    <div className="image-frame" onClick={() => togglePopup('comingSoon1')}>
+                        <img src={comingsoon} alt="Coming Soon" loading="lazy" />
+                        {showPopup.comingSoon1 && (
+                            <div className="popup show-popup">
+                                <h3>Check Back For Updates</h3>
+                                <h5>Our next museum will be revealed soon!</h5>
+                                <button className="popup-close-button" onClick={(e) => togglePopup('comingSoon1', e)}>Close</button>
+                            </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Coming Soon 2 Image with lazy loading */}
+                <div className="image-frame-container">
+                    <div className="image-frame" onClick={() => togglePopup('comingSoon2')}>
+                        <img src={comingsoon} alt="Coming Soon" loading="lazy" />
+                        {showPopup.comingSoon2 && (
+                            <div className="popup show-popup">
+                                <h3>Check Back For Updates</h3>
+                                <h5>Our next museum will be revealed soon!</h5>
+                                <button className="popup-close-button" onClick={(e) => togglePopup('comingSoon2', e)}>Close</button>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
