@@ -35,6 +35,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "name" : self.name,
+            "username" : self.username,
             "favorites": [exhibit.serialize() for exhibit in self.favorites]
             # Note: Password is intentionally omitted for security reasons.
         }

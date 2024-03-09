@@ -4,7 +4,8 @@ const getState = ({ getStore, getActions, setStore }) => {
             token: null,
             artPieces: [],
             artDepartments: [],
-            bool: false
+            bool: false,
+            user: {}
         },
         actions: {
             onLoginClick: async (email, password) => {
@@ -54,6 +55,22 @@ const getState = ({ getStore, getActions, setStore }) => {
                             
                         });
             },
+            // getUser: () => {
+            //     const token = sessionStorage.getItem("token");
+            //     fetch(`${process.env.BACKEND_URL}/api/private`,
+            //     {headers : {
+            //         'Content-Type' : 'application/json',
+            //         Authorization : Bearer + token
+            //     }}
+            //     )
+            //             .then(response => response.json())
+            //             .then(data => {
+            //                 const store = getStore();
+            //                 store.user = data;
+            //                 console.log(store.user)
+                            
+            //             });
+            // },
 
             // getDepartments: () => {
             //     fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
@@ -65,9 +82,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             usersFavoritePage: async () => {
                 const store = getStore();
-                const response = await fetch(`${process.env.BACKEND_URL}/api/private`, { headers: { Authorization: store.token } });
+                const response = await fetch(`${process.env.BACKEND_URL}/api/private`, { headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}`}});
                 if (!response.ok) {
                     console.error("Failed to fetch user's information");
+                    console.log(response,sessionStorage.getItem('token'))
+                }else{
+                    const data = await response.json()
+                    store.user = data
+                    console.log(store.user)
                 }
             },
 
