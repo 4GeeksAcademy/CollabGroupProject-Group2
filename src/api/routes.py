@@ -76,11 +76,14 @@ def private():
     user=User.query.filter_by(email=email).first()
     if user:
         # favorites = Favorite.query.filter_by(user_id=user.id).all()
-        response_body = {
-            "message": f"Logged in as: {user.email} Secret view. shhhh it's a secret",
-            "email": user.email,
+        response_body = user.serialize()
+            # {
+            # "message": f"Logged in as: {user.email} Secret view. shhhh it's a secret",
+            # "email": user.email,
+            
+
             # "favorites": list(map(lambda x: x.serialize(), favorites))
-        }
+        # }
 
     return jsonify(response_body), 200
 
@@ -104,13 +107,12 @@ def get_all_Users():
 
     return jsonify(request_body), 200
 
-@api.route('/getSingleUser/<int:user_id>', methods=['GET'])
-@jwt_required()
-def get_Single_User(user_id): 
-    user = User.query.filter_by(id = user_id).first()
-    request_body = user.serialize()
+# @api.route('/getSingleUser/<int:user_id>', methods=['GET'])
+# def get_Single_User(user_id): 
+#     user = User.query.filter_by(id = user_id).first()
+#     request_body = user.serialize()
 
-    return jsonify(request_body), 200
+#     return jsonify(request_body), 200
 
 @api.route('/single/<int:exhibit_id>', methods=['GET'])
 @jwt_required()

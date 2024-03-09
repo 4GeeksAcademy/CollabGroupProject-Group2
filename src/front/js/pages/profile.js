@@ -5,6 +5,8 @@ import "../../styles/profile.css"
 
 export const Profile = () => {
     const { store, actions } = useContext(Context);
+    actions.usersFavoritePage()
+    const user = store.user
     return (
         <div className="text-center mt-5">
             <section className="h-100 gradient-custom-2">
@@ -23,8 +25,8 @@ export const Profile = () => {
                                         </button>
                                 </div>
                                 <div className="ms-3" style={{marginTop: "130px",}}>
-                                    <h5>Andy Horwitz</h5>
-                                    <p className="text-start fw-lighter">New York</p>
+                                    <h5>{user.name}</h5>
+                                    <p className="text-start fw-lighter">{user.username}</p>
                                 </div>
                             </div>
                     <div className="p-4 text-black" style={{backgroundColor: "#F8F9FA",}}>
