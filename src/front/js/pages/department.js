@@ -6,12 +6,17 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 
 export const Department = props => {
 	const { store, actions } = useContext(Context);
-	const params = useParams();
-    let artPieces = store.artPieces.filter(item => item.department == params.thedepartment)
+	const {id} = useParams();
+
+	useEffect(()=>{
+		actions.getEachDepartment(id)
+		console.log(store.currentDepartment)
+	},[])
+    // let artPieces = store.artPieces.filter(item => item.department == params.thedepartment)
 	return (
         <div>
             <p>this is the indiviual department page</p>
-            <div> 
+            {/* <div> 
 				{artPieces.map(item => (
 					<div className="rowExhibit">
 					<Link to={`single/${item.objectID}`}>
@@ -35,7 +40,7 @@ export const Department = props => {
 					</div>
 						
 					))}	
-			</div>
+			</div> */}
             {/* {artPieces.map((item) => {
                 <p>{item.displayName}</p>
             })} */}

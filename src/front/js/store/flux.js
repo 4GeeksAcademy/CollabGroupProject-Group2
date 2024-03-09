@@ -55,6 +55,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                             
                         });
             },
+
+            getEachDepartment: async(departmentId) => {
+                let response = await fetch(`${process.env.BACKEND_URL}/api/single_department/${departmentId}`)
+                let data = response.json()
+                console.log(data)
+                setStore({currentDepartment:data})
+            },
             // getUser: () => {
             //     const token = sessionStorage.getItem("token");
             //     fetch(`${process.env.BACKEND_URL}/api/private`,
