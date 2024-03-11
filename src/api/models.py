@@ -15,6 +15,7 @@ user_to_exhibit = db.Table(
 
 
 class User(db.Model):
+    __tablename__="user"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     username = db.Column(db.String(120), unique=True, nullable=False)
@@ -24,8 +25,8 @@ class User(db.Model):
     favorites = db.relationship(
         'Exhibits',
         secondary = user_to_exhibit,
-        primaryjoin = (id == user_to_exhibit.c.user_id),
-        uselist = True
+       
+        
     )
 
     def __repr__(self):
@@ -53,12 +54,7 @@ class Exhibits(db.Model):
     culture = db.Column(db.String(100),nullable=True)
     object_date = db.Column(db.String(100),nullable=True)
     artist_name =db.Column(db.String(250),nullable=True)
-    favorites = db.relationship(
-        'User',
-        secondary = user_to_exhibit,
-        primaryjoin = (id == user_to_exhibit.c.exhibit_id),
-        uselist = True
-    )
+    
     
     def __repr__(self):
         return f'<Exhibit {self.exhibit_name}>'
