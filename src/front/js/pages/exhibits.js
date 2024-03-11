@@ -12,6 +12,12 @@ export const Exhibits = () => {
 	useEffect(()=>{
 		setArtPieces(store.artPieces)
 	},[store])
+
+	const handleFavorite = (exhibit_museum_id) => {
+		actions.addFavorite(exhibit_museum_id)
+		console.log(store.user)
+	}
+
 	return (
 	<AuthComponent>	
 		<div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100">
@@ -25,7 +31,12 @@ export const Exhibits = () => {
 						</Link>
   								<div className="card-body overflow-auto mb-2">
     								<p className="card-text" style={{fontSize: "x-small"}}>{item.exhibit_name}</p>
-									<button className="exhibit-button" onClick=""><i class="fas fa-heart" aria-hidden="true"></i></button>
+									<button className="exhibit-button" 			
+										onClick={() => {
+											handleFavorite(item.exhibit_museum_id);
+											}}>
+												<i class="fas fa-heart" aria-hidden="true"></i>
+									</button>
   								</div>
 					</div>
 					{/* <div className="card" style={{width: "18rem",}}>

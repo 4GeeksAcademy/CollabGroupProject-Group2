@@ -55,6 +55,8 @@ const getState = ({ getStore, getActions, setStore }) => {
                             
                         });
             },
+
+
             // getUser: () => {
             //     const token = sessionStorage.getItem("token");
             //     fetch(`${process.env.BACKEND_URL}/api/private`,
@@ -88,8 +90,53 @@ const getState = ({ getStore, getActions, setStore }) => {
                     console.log(response,sessionStorage.getItem('token'))
                 }else{
                     const data = await response.json()
-                    store.user = data
-                    console.log(store.user)
+                    setStore({user : data})
+                }
+            },
+
+            addFavorite: async (exhibit_museum_id) => {
+                try {
+                    const response = await fetch(`${process.env.BACKEND_URL}/api/addFavorite/${exhibit_museum_id}`, {
+                        headers: {
+                            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                        },
+                        method: 'POST',
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Error adding favorite');
+                    }
+
+                    const jsonResponse = await response.json();
+
+                    console.log("Favorite succesfully added", jsonResponse);
+                    
+                } catch (error) {
+                    console.error("Error adding favorite", error);
+                    
+                }
+            },
+
+            deleteFavorite: async (exhibit_museum_id) => {
+                try {
+                    const response = await fetch(`${process.env.BACKEND_URL}/api/deleteFavorite/${exhibit_museum_id}`, {
+                        headers: {
+                            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+                        },
+                        method: 'DELETE',
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Error deleting favorite from favorites');
+                    }
+
+                    const jsonResponse = await response.json();
+                    console.log("Favorite succesfully deleted", jsonResponse);
+
+                    // Aquí puedes realizar acciones adicionales, como actualizar la UI
+                } catch (error) {
+                    console.error("Error! -> ", error);
+                    // Manejar errores, por ejemplo, mostrar un mensaje al usuario
                 }
             },
 
