@@ -126,17 +126,17 @@ def single_exhibit(exhibit_id):
 @api.route('/single_department/<int:museums_department_id>', methods=['GET'])
 @jwt_required()
 def single_department(museums_department_id):
-    department = Departments.query.filter_by(id = museums_department_id).first()
+    department = Departments.query.filter_by(museums_department_id = museums_department_id).first()
     request_body = department.serialize()
 
     return jsonify(request_body), 200
 
-@api.route('/addFavorite/<int:exhibit_id>', methods=['POST'])
+@api.route('/addFavorite/<int:exhibit_museum_id>', methods=['POST'])
 @jwt_required()
-def addFavorite(exhibit_id):
+def addFavorite(exhibit_museum_id):
     email = get_jwt_identity()
     user=User.query.filter_by(email=email).first()
-    exhibit = Exhibits.query.filter_by(id=exhibit_id).first()
+    exhibit = Exhibits.query.filter_by(exhibit_museum_id=exhibit_museum_id).first()
     user.favorites.append(exhibit)
     db.session.merge(user)
     db.session.commit()
@@ -144,13 +144,13 @@ def addFavorite(exhibit_id):
 
     return jsonify(user.serialize()), 200
 
-@api.route('/deleteFavorite/<int:exhibit_id>', methods=['DELETE'])
+@api.route('/deleteFavorite/<int:exhibit_museum_id>', methods=['DELETE'])
 @jwt_required()
-def deleteFavorite(exhibit_id):  
+def deleteFavorite(exhibit_museum_id):  
     email = get_jwt_identity()
     user=User.query.filter_by(email=email).first()
     user.favorites = list(filter(
-      lambda x: x.id != exhibit_id,
+      lambda x: x.exhibit_museum_id != exhibit_museum_id,
        user.favorites
     ))
     db.session.merge(user)
