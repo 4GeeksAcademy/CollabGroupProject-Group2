@@ -7,10 +7,12 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 export const Single = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+	console.log(params.objectID)
 	let exhibit = store.artPieces.find(
 		(item) => item.exhibit_museum_id == params.objectID
 	  );
 
+	  
 	return (
 		<div>
 			{/* make a for loop and create cards to reuse them in the department part */}

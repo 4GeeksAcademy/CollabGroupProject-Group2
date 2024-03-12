@@ -33,11 +33,7 @@ export const Departments = () => {
 						</div>
 					</Link>
 				))}
-				<div className="departmentExamples">
-					<div className="example"></div>
-					<div className="example"></div>
-					<div className="example"></div>
-				</div>
+				
 			</div>
 		</div>
 	</AuthComponent>	
