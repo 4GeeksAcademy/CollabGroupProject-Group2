@@ -23,7 +23,7 @@ export const Departments = () => {
 	return (
 	
 	<AuthComponent>
-		<div className="text-center mt-5">
+		<div className="text-center mt-5" id="background">
 			<h1 className="seven" >DEPARTMENTS</h1>
 			<div className="rowDepartments"> 
 				{artDepartments.map(item => (

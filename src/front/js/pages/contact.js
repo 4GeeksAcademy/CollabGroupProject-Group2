@@ -1,6 +1,6 @@
 import React, { useContext, useState, useRef } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/museums.css";
+import "../../styles/contact.css";
 import emailjs from "@emailjs/browser";
 
 export const Contactus = () => {
@@ -55,7 +55,7 @@ export const Contactus = () => {
     };
 
     return (
-        <section className="mb-4 m-3">
+        <section className="mb-4 m-3" id="background-color">
             <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
             <p className="text-center w-responsive mx-auto mb-5">
                 Have questions or comments? Please send us a message!
