@@ -36,7 +36,7 @@ export const Home = () => {
 
 				<div className="row" id="list">
 					{/* <h1 className="features">Features</h1> */}
-				<div contenteditable>
+				<div >
 
   				<div className="lineHome">
 					View world-class pieces of art

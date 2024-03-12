@@ -8,10 +8,11 @@ export const Profile = () => {
     const { store, actions } = useContext(Context);
     useEffect(()=>{
         actions.usersFavoritePage()
-        store.user.favorites
     },[])
     const handleDeleteFavorite = (exhibit_museum_id) => {
         actions.deleteFavorite(exhibit_museum_id)
+        actions.usersFavoritePage()
+        console.log(store.user)
 
     }
     return (
@@ -23,7 +24,7 @@ export const Profile = () => {
                             <div className="profile-card">
                                 <div className="rounded-top text-white d-flex flex-row" style={{backgroundColor: "#000", height:"200px",}}>
                                 <div className="ms-4 mt-5 d-flex flex-column" style={{width: "150px",}}>
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                                     alt="Generic placeholder image" className="img-fluid img-thumbnail mt-4 mb-2"
                                     style={{width: "150px", zIndex: "1",}} />
                                         <button type="button" className="btn btn-outline-dark w-100" data-mdb-ripple-color="dark"
@@ -56,7 +57,7 @@ export const Profile = () => {
                             
                                 <div className="d-flex justify-content-between align-items-center mb-4">
                                     <p className="lead fw-normal mb-0 text-decoration-underline">FAVORITES</p>
-                                    <p className="mb-0"><a href="#!" className="text-muted">Show all</a></p>
+                                    {/* <p className="mb-0"><a href="#!" className="text-muted">Show all</a></p> */}
                                 </div>
                                 <div>
                                     {store.user?.favorites?.map((item) => {
@@ -76,7 +77,7 @@ export const Profile = () => {
                                                         handleDeleteFavorite(item.exhibit_museum_id);
                                                         console.log(store.user.favorites)
                                                     }}>
-                                                        <i class="fas fa-trash" aria-hidden="true"></i>
+                                                        <i className="fas fa-trash" aria-hidden="true"></i>
                                                     </button>
                                                     </div>
                                                  </div> 

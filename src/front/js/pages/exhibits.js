@@ -11,7 +11,7 @@ export const Exhibits = () => {
 	const [artPieces , setArtPieces] = useState([])
 	useEffect(()=>{
 		setArtPieces(store.artPieces)
-	},[store])
+	},[])
 
 	const handleFavorite = (exhibit_museum_id) => {
 		actions.addFavorite(exhibit_museum_id)
@@ -22,9 +22,9 @@ export const Exhibits = () => {
 	<AuthComponent>	
 		<div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100">
 			{/* <div>  */}
-				{artPieces.map(item => (
+				{artPieces.map((item, index) => (
 					
-				<div className="rowExhibit ">
+				<div className="rowExhibit" key={index} >
 					<div className="card" style={{width: "18rem", height: "420px", boxShadow: "10px 10px 20px 21px rgba(0, 0, 0, 0.2)", border:"15px solid black"}}>
 						<Link to={`single/${item.exhibit_museum_id}`}>
   							<img src={item.primary_image_small} className="card-img-top" width="18rem" height="320px" onError= {(e)=>{e.target.src = fallBackURL}} alt={item.exhibit_name} />
@@ -35,7 +35,7 @@ export const Exhibits = () => {
 										onClick={() => {
 											handleFavorite(item.exhibit_museum_id);
 											}}>
-												<i class="fas fa-heart" aria-hidden="true"></i>
+												<i className="fas fa-heart" aria-hidden="true"></i>
 									</button>
   								</div>
 					</div>
