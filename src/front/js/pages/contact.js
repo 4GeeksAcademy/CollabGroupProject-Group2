@@ -1,23 +1,57 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/museums.css";
+import emailjs from "@emailjs/browser";
 
 export const Contactus = () => {
+    const form = useRef();
     const { store, actions } = useContext(Context);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
 
+    // ui658ZPOA12dMvT_e
+    
+
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevents default form submission behavior
-        // Here you would typically handle the form submission, like sending the data to a server
         console.log({ name, email, subject, message });
-        // Optionally, you can clear the form fields after submission
-        // setName('');
-        // setEmail('');
-        // setSubject('');
-        // setMessage('');
+
+    const isValid = () => {
+        // const formdata = new FormData(form.current)
+        // const name = formdata.get("from_name")
+        // const email = formdata.get("from_email")
+        // const subject = formdata.get("subject")
+        // const message = formdata.get("message")
+        console.log(name, email, subject, message)
+
+
+        if (name.length > 3 || email.includes("@") || subject.length > 1){
+            return true
+        }
+        else return false
+    }
+
+    const checkValidation = isValid()
+
+    if (checkValidation) {
+        emailjs.sendForm("service_glj46sa", "template_vkp23ks", form.current, "ui658ZPOA12dMvT_e").then(
+            (result) => {
+              console.log(result);
+               });
+
+            (error) => {
+                console.log(error);
+            };
+  
+    
+    }
+
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
     };
 
     return (
@@ -29,7 +63,7 @@ export const Contactus = () => {
 
             <div className="row">
                 <div className="col-md-9 mb-md-0 mb-5">
-                    <form id="contact-form" name="contact-form" onSubmit={handleSubmit}>
+                    <form ref = {form} id="contact-form" name="contact-form" onSubmit={handleSubmit}>
 
                         <div className="row">
                             <div className="col-md-6">
@@ -79,7 +113,7 @@ export const Contactus = () => {
                             <p>012-345-6789</p>
                         </li>
                         <li><i className="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>contact@artseekers.com</p>
+                            <p>artseekersteam@gmail.com</p>
                         </li>
                     </ul>
                 </div>

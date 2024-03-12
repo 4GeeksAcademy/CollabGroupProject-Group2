@@ -95,6 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             },
 
             addFavorite: async (exhibit_museum_id) => {
+                const store = getStore();
                 try {
                     const response = await fetch(`${process.env.BACKEND_URL}/api/addFavorite/${exhibit_museum_id}`, {
                         headers: {
@@ -110,14 +111,18 @@ const getState = ({ getStore, getActions, setStore }) => {
                     const jsonResponse = await response.json();
 
                     console.log("Favorite succesfully added", jsonResponse);
+                    setStore({user : jsonResponse})
+
                     
                 } catch (error) {
                     console.error("Error adding favorite", error);
+                    
                     
                 }
             },
 
             deleteFavorite: async (exhibit_museum_id) => {
+                const store = getStore();
                 try {
                     const response = await fetch(`${process.env.BACKEND_URL}/api/deleteFavorite/${exhibit_museum_id}`, {
                         headers: {
@@ -132,6 +137,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
                     const jsonResponse = await response.json();
                     console.log("Favorite succesfully deleted", jsonResponse);
+                    setStore({user : jsonResponse})
+
 
                     // Aquí puedes realizar acciones adicionales, como actualizar la UI
                 } catch (error) {
