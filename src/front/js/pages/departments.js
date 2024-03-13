@@ -19,12 +19,14 @@ export const Departments = () => {
 		console.log(artDepartments);
 	},[store.artDepartments])
 
-	// console.log(artDepartments);
+	
 	return (
 	
 	<AuthComponent>
-		<div className="text-center mt-5" id="background">
-			<h1 className="seven" >DEPARTMENTS</h1>
+		<div>
+		<h1 className="text-center mt-5" >DEPARTMENTS</h1>
+		<div className="text-center" id="background">
+			
 			<div className="rowDepartments"> 
 				{artDepartments.map(item => (
 					<Link to={`/department/${item.department_museum_id}`}>
@@ -35,6 +37,7 @@ export const Departments = () => {
 				))}
 				
 			</div>
+		</div>
 		</div>
 	</AuthComponent>	
 	);

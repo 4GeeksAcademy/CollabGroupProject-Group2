@@ -22,6 +22,22 @@ export const Single = props => {
 			<p>Region: {exhibit.region}</p>
 			<p>Date Created: {exhibit.object_date}</p>
 			{/* <p>Department: {exhibit.department_museum_id}</p> */}
+			<div className="card mb-3" style={{maxWidth: "540px"}}>
+  <div className="row g-0">
+    <div className="col-md-4">
+      <img src="..." className="img-fluid rounded-start" alt="..."/>
+    </div>
+    <div className="col-md-8">
+      <div className="card-body">
+        <h5 className="card-title">{exhibit.exhibit_name}</h5>
+        <p className="card-text">{exhibit.artist_name}</p>
+        <p className="card-text"><small className="text-body-secondary">{exhibit.culture}</small></p>
+		<p className="card-text"><small className="text-body-secondary">{exhibit.region}</small></p>
+		<p className="card-text"><small className="text-body-secondary">{exhibit.object_date}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
 		</div>
 	);
 };
