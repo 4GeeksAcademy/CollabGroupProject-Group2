@@ -24,14 +24,14 @@ export const Single = (props) => {
       <div className="card text-center" style={{ maxWidth: "1000px" }}>
         <div className="row g-0">
           <div className="col-md-4">
-            <img src="" className="img-fluid rounded-start" alt="..." />
+            <img src={exhibit.primary_image_small} className="img-fluid rounded-start" alt="..." />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">{exhibit.exhibit_name}<br/>{exhibit.artist_name}</h5>
+              <h5 className="card-title">Name: {exhibit.exhibit_name}<br/>Artist Name:{exhibit.artist_name}</h5>
               <p className="card-text"></p>
               <p className="card-text">
-                <small className="text-body-secondary">{exhibit.culture}<br/>{exhibit.region}<br/>{exhibit.object_date}</small>
+                <small className="text-body-secondary">Culture:{exhibit.culture}<br/>Region:{exhibit.region}<br/>Object Date:{exhibit.object_date}</small>
               </p>
             </div>
           </div>
