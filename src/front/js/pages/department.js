@@ -13,13 +13,16 @@ export const Department = (props) => {
     console.log(store.user);
   };
 
+  const department = store.artDepartments.find(dept => dept.department_museum_id.toString() === params.thedepartment);
+    const departmentName = department ? department.name : 'Department';
+
   let artPieces = store.artPieces.filter(
     (item) => item.department_museum_id.toString() === params.thedepartment
   );
 
   return (
     <div>
-		<h1 className="text-center mt-5">DEPARTMENT NAME HERE</h1>
+    <h1 className="text-center mt-5">{departmentName}</h1>
       <div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100" id="main">
         {artPieces.map((item, index) => (
           <div className="rowExhibit">
