@@ -26,7 +26,7 @@ export const Department = (props) => {
       <div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100" id="main">
         {artPieces.map((item, index) => (
           <div className="rowExhibit">
-            <Link to={`../../exhibits/single/${item.exhibit_museum_id}`}>
+            {/* <Link to={`../../exhibits/single/${item.exhibit_museum_id}`}> */}
               <div
                 className="card"
                 style={{
@@ -36,7 +36,7 @@ export const Department = (props) => {
                   border: "15px solid black",
                 }}
               >
-                <Link to={`single/${item.exhibit_museum_id}`}>
+                <Link to={`../../exhibits/single/${item.exhibit_museum_id}`}>
                   <img
                     src={item.primary_image_small}
                     className="card-img-top"
@@ -62,7 +62,7 @@ export const Department = (props) => {
                   </button>
                 </div>
               </div>
-            </Link>
+            {/* </Link> */}
           </div>
         ))}
       </div>
