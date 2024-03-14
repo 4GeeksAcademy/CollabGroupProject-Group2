@@ -97,7 +97,9 @@ export const Profile = () => {
                           </Link>
 
                           <div className="profile-col card-body">
+                            <p>{item.exhibit_name}</p>
                             <button
+                              style={{float: "right"}}
                               className="profileButton"
                               id="trashprofileButton"
                               onClick={() =>
