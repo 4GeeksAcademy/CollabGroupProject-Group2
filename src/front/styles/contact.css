@@ -5,3 +5,6 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(222, 184, 135, 1), rgba(166, 193, 238, 1))
 }
+body{
+    min-height: 100vh;
+}

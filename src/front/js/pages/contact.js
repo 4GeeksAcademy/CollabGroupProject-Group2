@@ -55,9 +55,10 @@ export const Contactus = () => {
     };
 
     return (
-        <section className="mb-4 m-3" id="background-color">
-            <h2 className="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-            <p className="text-center w-responsive mx-auto mb-5">
+        <div className="mt-0 mb-0" id="background-color">
+        <section className="p-3">
+            <h2 className="h1-responsive font-weight-bold text-center ">Contact us</h2>
+            <p className="text-center w-responsive mx-auto mb-4">
                 Have questions or comments? Please send us a message!
             </p>
 
@@ -68,14 +69,16 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="md-form mb-0">
-                                    <input type="text" id="name" name="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
                                     <label htmlFor="name" className={name ? "active" : ""}>Your name</label>
+                                    <input type="text" id="name" name="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+                                    
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="md-form mb-0">
-                                    <input type="text" id="email" name="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <label htmlFor="email" className={email ? "active" : ""}>Your email</label>
+                                    <input type="text" id="email" name="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    
                                 </div>
                             </div>
                         </div>
@@ -83,8 +86,8 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="md-form mb-0">
-                                    <input type="text" id="subject" name="subject" className="form-control" value={subject} onChange={(e) => setSubject(e.target.value)} />
                                     <label htmlFor="subject" className={subject ? "active" : ""}>Subject</label>
+                                    <input type="text" id="subject" name="subject" className="form-control" value={subject} onChange={(e) => setSubject(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -92,8 +95,8 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="md-form">
-                                    <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                                     <label htmlFor="message">Your message</label>
+                                    <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                                 </div>
                             </div>
                         </div>
@@ -119,5 +122,6 @@ export const Contactus = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };

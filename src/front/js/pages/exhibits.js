@@ -22,7 +22,7 @@ export const Exhibits = () => {
   return (
     <AuthComponent>
       <div
-        className="text-center mt-5 justify-content-center d-flex flex-wrap w-100"
+        className="text-center justify-content-center d-flex flex-wrap w-100"
         id="main"
       >
         {artPieces.map((item, index) => (

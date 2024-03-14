@@ -49,7 +49,7 @@ const Layout = () => {
                         <Route element={<Single />} path="exhibits/single/:objectID" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
+                    {/* <Footer /> */}
                 </ScrollToTop>
             </BrowserRouter>
         </div>
