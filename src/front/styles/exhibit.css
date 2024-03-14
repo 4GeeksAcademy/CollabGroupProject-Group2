@@ -78,3 +78,8 @@
     margin-left: 100px;
 }
 
+.exhibit-button.favorited, .fas.fa-heart.favorited {
+    color: red;
+}
+
+

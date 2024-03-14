@@ -6,25 +6,33 @@ import AuthComponent from "../component/auth";
 import "../../styles/exhibit.css";
 
 export const Exhibits = () => {
-  let fallBackURL =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzqX-q4R4VGGs1ArQpqZ-Y5deWIBVJ97KHOp4bkuQlmg&s";
+  let fallBackURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzqX-q4R4VGGs1ArQpqZ-Y5deWIBVJ97KHOp4bkuQlmg&s";
   const { store, actions } = useContext(Context);
   const [artPieces, setArtPieces] = useState([]);
+  const [favorited, setFavorited] = useState({}); // State to track favorited items
+
   useEffect(() => {
     setArtPieces(store.artPieces);
-  }, []);
+  }, [store.artPieces]);
 
   const handleFavorite = (exhibit_museum_id) => {
+    setFavorited((prevFavorited) => ({
+      ...prevFavorited,
+      [exhibit_museum_id]: !prevFavorited[exhibit_museum_id],
+    }));
     actions.addFavorite(exhibit_museum_id);
-    console.log(store.user);
   };
 
   return (
     <AuthComponent>
+
       <div
         className="text-center justify-content-center d-flex flex-wrap w-100"
         id="main"
       >
+
+      <div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100" id="main">
+
         {artPieces.map((item, index) => (
           <div className="rowExhibit" key={index}>
             <div
@@ -43,7 +51,7 @@ export const Exhibits = () => {
                   width="18rem"
                   height="320px"
                   onError={(e) => {
-                    e.target.src = fallBackURL;
+                    e.target.src = fallBackURL; // Fallback image if there's an error
                   }}
                   alt={item.exhibit_name}
                 />
@@ -53,12 +61,12 @@ export const Exhibits = () => {
                   {item.exhibit_name}
                 </p>
                 <button
-                  className="exhibit-button"
+                  className={`exhibit-button ${favorited[item.exhibit_museum_id] ? 'favorited' : ''}`}
                   onClick={() => {
                     handleFavorite(item.exhibit_museum_id);
                   }}
                 >
-                  <i className="fas fa-heart" aria-hidden="true"></i>
+                  <i className={`fas fa-heart ${favorited[item.exhibit_museum_id] ? 'favorited' : ''}`} aria-hidden="true"></i>
                 </button>
               </div>
             </div>
