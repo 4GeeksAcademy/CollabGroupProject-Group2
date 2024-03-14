@@ -73,6 +73,7 @@ export const Exhibits = () => {
           </div>
         ))}
       </div>
+      </div>
     </AuthComponent>
   );
 };
