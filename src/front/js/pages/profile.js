@@ -19,7 +19,7 @@ export const Profile = () => {
       <section className="h-100 gradient-custom-2">
         <div className="container py-5 h-100">
           <div className="row d-flex justify-content-center align-items-center h-100">
-            <div className="col col-lg-9 col-xl-7">
+            <div className="col col-lg-12 col-xl-12">
               <div className="profile-card">
                 <div
                   className="rounded-top text-white d-flex flex-row"
@@ -59,76 +59,61 @@ export const Profile = () => {
                   className="p-4 text-black"
                   style={{ backgroundColor: "#F8F9FA" }}
                 >
-                  <div className="d-flex justify-content-end text-center py-1">
-                    {/* <div>
-                                <p className="mb-1 h5">253</p>
-                                <p className="small text-muted mb-0">Photos</p>
-                            </div>
-                            <div className="px-3">
-                                <p className="mb-1 h5">1026</p>
-                                <p className="small text-muted mb-0">Followers</p>
-                            </div>
-                            <div>
-                                <p className="mb-1 h5">478</p>
-                                <p className="small text-muted mb-0">Following</p>
-                            </div> */}
-                  </div>
+                  <div className="d-flex justify-content-end text-center py-1"></div>
                 </div>
                 <div className="card-body p-4 text-black flex-column">
                   <div className="d-flex justify-content-between align-items-center mb-4">
                     <p className="lead fw-normal mb-0 text-decoration-underline">
                       FAVORITES
                     </p>
-                    {/* <p className="mb-0"><a href="#!" className="text-muted">Show all</a></p> */}
                   </div>
-                  <div>
-                    {store.user?.favorites?.map((item) => {
-                      return (
-                        <div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100">
-                          {/* <div className="profile-col mb-2"> */}
-                            <div className="rowExhibit">
-                              <div
-                                className="card"
-                                style={{
-                                  width: "18rem",
-                                  height: "420px",
-                                  boxShadow:
-                                    "10px 10px 20px 21px rgba(0, 0, 0, 0.2)",
-                                  border: "15px solid black",
-                                }}
-                              >
-                                <Link
-                                  to={`../exhibits/single/${item.exhibit_museum_id}`}
-                                >
-                                  <img
-                                    src={item.primary_image_small}
-                                    alt="image 1"
-                                    className="w-50 rounded-3"
-                                  />
-                                </Link>
+                  <div className="row">
+                    {store.user?.favorites?.map((item, index) => (
+                      <div
+                        key={index}
+                        className="col-md-4 mb-4" // Adjust this according to your needs
+                      >
+                        <div
+                          className="card"
+                          style={{
+                            width: "100%", // Adjust according to your needs
+                            height: "auto",
+                            boxShadow: "10px 10px 20px 21px rgba(0, 0, 0, 0.2)",
+                            border: "15px solid black",
+                          }}
+                        >
+                          <Link
+                            to={`../exhibits/single/${item.exhibit_museum_id}`}
+                          >
+                            <img
+                              src={item.primary_image_small}
+                              alt="image 1"
+                              className="w-50 rounded-3"
+                              style={{marginTop: "15px",
+                                      border: "2px solid black"
+                            }}
+                            />
+                          </Link>
 
-                                <div className="profile-col card-body overflow-auto">
-                                  <button
-                                    className="profileButton" id="profileButton"
-                                    onClick={() => {
-                                      handleDeleteFavorite(
-                                        item.exhibit_museum_id
-                                      );
-                                      console.log(store.user.favorites);
-                                    }}
-                                  >
-                                    <i
-                                      className="fas fa-trash"
-                                      aria-hidden="true"
-                                    ></i>
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          {/* </div> */}
+                          <div className="profile-col card-body">
+                            <button
+                              className="profileButton"
+                              id="trashprofileButton"
+                              onClick={() =>
+                                handleDeleteFavorite(item.exhibit_museum_id)
+                              }
+                            >
+                              <i
+                                className="fas fa-trash text-center"
+                                aria-hidden="true"
+                                style={{ height: "5px" }}
+                                id= "texttrash"
+                              ></i>
+                            </button>
+                          </div>
                         </div>
-                      );
-                    })}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

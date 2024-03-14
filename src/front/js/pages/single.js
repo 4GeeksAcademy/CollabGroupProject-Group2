@@ -14,7 +14,7 @@ export const Single = (props) => {
   );
 
   return (
-    <div className="m-auto">
+    <div className="m-auto" id="single-background" style={{width: "90%"}}>
       {/* make a for loop and create cards to reuse them in the department part */}
       {/* <p>This is the exhibit: {exhibit.exhibit_name} </p>
       <p>Artist: {exhibit.artist_name}</p>
@@ -22,7 +22,7 @@ export const Single = (props) => {
       <p>Region: {exhibit.region}</p>
       <p>Date Created: {exhibit.object_date}</p> */}
       {/* <p>Department: {exhibit.department_museum_id}</p> */}
-      <div className="card text-center mx-auto" 
+      <div className="card text-center mx-auto" id="single-background"
         style={{ maxWidth: "1000px", border: "15px solid black", boxShadow: "10px 10px 20px 21px rgba(0,0,0,0.2)", marginTop: "50px", marginBottom: "50px" }}
         >
         <div className="row g-0">
@@ -34,12 +34,12 @@ export const Single = (props) => {
             />
           </div>
           <div className="col-md-8">
-            <div className="card-body">
-              <h5 className="card-title m-auto">
+            <div className="singlecard-body">
+              <p className="singlecard-title m-auto" style={{backgroundColor: "white", width: "90%", border:"3px solid black"}}>
                 Name: <span style={{fontWeight: "3px"}}>{exhibit.exhibit_name}</span>
                 <br />
                 Artist Name: {exhibit.artist_name}
-                <p className="card-text mt-50px">
+                <p className="singlecard-text mt-50px">
                 <small className="text-body-secondary">
                   Culture:{exhibit.culture}
                   <br />
@@ -48,7 +48,7 @@ export const Single = (props) => {
                   Object Date:{exhibit.object_date}
                 </small>
               </p>
-              </h5>
+              </p>
               
             </div>
           </div>
