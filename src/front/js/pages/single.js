@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import "../../styles/single.css"
 
 export const Single = (props) => {
   const { store, actions } = useContext(Context);
@@ -21,18 +22,34 @@ export const Single = (props) => {
       <p>Region: {exhibit.region}</p>
       <p>Date Created: {exhibit.object_date}</p> */}
       {/* <p>Department: {exhibit.department_museum_id}</p> */}
-      <div className="card text-center" style={{ maxWidth: "1000px" }}>
+      <div className="card text-center mx-auto" 
+        style={{ maxWidth: "1000px", border: "15px solid black", boxShadow: "10px 10px 20px 21px rgba(0,0,0,0.2)", marginTop: "50px", marginBottom: "50px" }}
+        >
         <div className="row g-0">
           <div className="col-md-4">
-            <img src={exhibit.primary_image_small} className="img-fluid rounded-start" alt="..." />
+            <img
+              src={exhibit.primary_image_small}
+              className="img-fluid rounded-start"
+              alt="..."
+            />
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">Name: {exhibit.exhibit_name}<br/>Artist Name:{exhibit.artist_name}</h5>
-              <p className="card-text"></p>
-              <p className="card-text">
-                <small className="text-body-secondary">Culture:{exhibit.culture}<br/>Region:{exhibit.region}<br/>Object Date:{exhibit.object_date}</small>
+              <h5 className="card-title m-auto">
+                Name: <span style={{fontWeight: "3px"}}>{exhibit.exhibit_name}</span>
+                <br />
+                Artist Name: {exhibit.artist_name}
+                <p className="card-text mt-50px">
+                <small className="text-body-secondary">
+                  Culture:{exhibit.culture}
+                  <br />
+                  Region:{exhibit.region}
+                  <br />
+                  Object Date:{exhibit.object_date}
+                </small>
               </p>
+              </h5>
+              
             </div>
           </div>
         </div>
