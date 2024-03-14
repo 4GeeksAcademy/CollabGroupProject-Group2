@@ -31,21 +31,24 @@ export const Single = (props) => {
               src={exhibit.primary_image_small}
               className="img-fluid rounded-start"
               alt="..."
+              style={{margin: "10px",
+                      border: "2px solid black"
+            }}
             />
           </div>
           <div className="col-md-8">
             <div className="singlecard-body">
               <p className="singlecard-title m-auto" style={{backgroundColor: "white", width: "90%", border:"3px solid black"}}>
-                Name: <span style={{fontWeight: "3px"}}>{exhibit.exhibit_name}</span>
+                Name: <span id="titleText" style={{fontWeight: "25"}}>{exhibit.exhibit_name}</span>
                 <br />
-                Artist Name: {exhibit.artist_name}
+                Artist Name: <span id="titleText"> {exhibit.artist_name}</span>
                 <p className="singlecard-text mt-50px">
                 <small className="text-body-secondary">
-                  Culture:{exhibit.culture}
+                  Culture:<span id="titleText"> {exhibit.culture}</span>
                   <br />
-                  Region:{exhibit.region}
+                  Region:<span id="titleText"> {exhibit.region}</span>
                   <br />
-                  Object Date:{exhibit.object_date}
+                  Object Date:<span id="titleText"> {exhibit.object_date}</span>
                 </small>
               </p>
               </p>

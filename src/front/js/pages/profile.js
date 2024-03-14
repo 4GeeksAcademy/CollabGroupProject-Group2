@@ -90,8 +90,9 @@ export const Profile = () => {
                               alt="image 1"
                               className="w-50 rounded-3"
                               style={{marginTop: "15px",
-                                      border: "2px solid black"
-                            }}
+                                      border: "2px solid black",
+                                      height: "250px"
+                                    }}
                             />
                           </Link>
 
