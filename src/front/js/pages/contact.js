@@ -55,13 +55,15 @@ export const Contactus = () => {
     };
 
     return (
+        
         <div className="mt-0 mb-0" id="background-color">
         <section className="p-3">
-            <h2 className="h1-responsive font-weight-bold text-center ">Contact us</h2>
+            <h2 className="h1-responsive font-weight-bold text-center ">CONTACT US</h2>
             <p className="text-center w-responsive mx-auto mb-4">
                 Have questions or comments? Please send us a message!
             </p>
 
+            <div style={{border:"10px solid black", backgroundColor:"white", padding:"20px"}}>
             <div className="row">
                 <div className="col-md-9 mb-md-0 mb-5">
                     <form ref = {form} id="contact-form" name="contact-form" onSubmit={handleSubmit}>
@@ -69,15 +71,15 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="md-form mb-0">
-                                    <label htmlFor="name" className={name ? "active" : ""}>Your name</label>
-                                    <input type="text" id="name" name="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
+                                    <label htmlFor="name" className={name ? "active" : ""}>Name:</label>
+                                    <input style={{backgroundColor:"rgba(166, 193, 238, 1)"}}type="text" id="name" name="name" className="form-control" value={name} onChange={(e) => setName(e.target.value)} />
                                     
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="md-form mb-0">
-                                    <label htmlFor="email" className={email ? "active" : ""}>Your email</label>
-                                    <input type="text" id="email" name="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <label htmlFor="email" className={email ? "active" : ""}>Email:</label>
+                                    <input style={{backgroundColor:"rgba(166, 193, 238, 1)"}}type="text" id="email" name="email" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
                                     
                                 </div>
                             </div>
@@ -86,8 +88,8 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="md-form mb-0">
-                                    <label htmlFor="subject" className={subject ? "active" : ""}>Subject</label>
-                                    <input type="text" id="subject" name="subject" className="form-control" value={subject} onChange={(e) => setSubject(e.target.value)} />
+                                    <label htmlFor="subject" className={subject ? "active" : ""}>Subject:</label>
+                                    <input style={{backgroundColor:"rgba(166, 193, 238, 1)"}}type="text" id="subject" name="subject" className="form-control" value={subject} onChange={(e) => setSubject(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -95,14 +97,14 @@ export const Contactus = () => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="md-form">
-                                    <label htmlFor="message">Your message</label>
-                                    <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                                    <label htmlFor="message">Message:</label>
+                                    <textarea style={{backgroundColor:"rgba(166, 193, 238, 1)"}} type="text" id="message" name="message" rows="2" className="form-control md-textarea" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <div className="text-center text-md-left">
-                            <button className="btn btn-primary" type="submit">Send</button>
+                            <button style={{marginTop:"15px"}} className="btn btn-primary" type="submit">Send</button>
                         </div>
                     </form>
                 </div>
@@ -116,10 +118,11 @@ export const Contactus = () => {
                             <p>012-345-6789</p>
                         </li>
                         <li><i className="fas fa-envelope mt-4 fa-2x"></i>
-                            <p>artseekersteam@gmail.com</p>
+                            <p>ArtSeekersTeam@mail.com</p>
                         </li>
                     </ul>
                 </div>
+            </div>
             </div>
         </section>
         </div>

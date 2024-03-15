@@ -34,12 +34,12 @@ export const Museums = () => {
                                 <h3>The Metropolitan Museum of Art</h3>
                                 <h6>New York, New York</h6>
                                 <h4>The Met Facts</h4>
-                                <li>
-                                    <ul>Founded in 1870</ul>
-                                    <ul>Home to over 2 million works of art</ul>
-                                    <ul>Collection is estimated to be worth over $50 billion dollars</ul>
-                                    <ul>Had over 3.2 million visitors in 2022</ul>
-                                </li>
+                                <ul>
+                                    <li>Founded in 1870</li>
+                                    <li>Home to over 2 million works of art</li>
+                                    <li>Collection is estimated to be worth over $50 billion dollars</li>
+                                    <li>Had over 3.2 million visitors in 2022</li>
+                                </ul>
                                 <button className="popup-close-button" onClick={(e) => togglePopup('jumbotron', e)}>Close</button>
                             </div>
                         )}

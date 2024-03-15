@@ -23,7 +23,7 @@ export const Single = (props) => {
       <p>Date Created: {exhibit.object_date}</p> */}
       {/* <p>Department: {exhibit.department_museum_id}</p> */}
       <div className="card text-center mx-auto" id="single-background"
-        style={{ maxWidth: "1000px", border: "15px solid black", boxShadow: "10px 10px 20px 21px rgba(0,0,0,0.2)", marginTop: "50px", marginBottom: "50px" }}
+        style={{ maxWidth: "100%", border: "15px solid black", boxShadow: "10px 10px 20px 21px rgba(0,0,0,0.2)", marginTop: "50px", marginBottom: "50px" }}
         >
         <div className="row g-0">
           <div className="col-md-4">

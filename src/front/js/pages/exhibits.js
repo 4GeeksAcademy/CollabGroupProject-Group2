@@ -57,7 +57,7 @@ export const Exhibits = () => {
                 />
               </Link>
               <div className="card-body overflow-auto mb-2">
-                <p className="card-text" style={{ fontSize: "x-small" }}>
+                <p className="card-text" style={{ fontSize: "12px" }}>
                   {item.exhibit_name}
                 </p>
                 <button
