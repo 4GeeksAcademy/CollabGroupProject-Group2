@@ -96,10 +96,10 @@ export const Profile = () => {
                             />
                           </Link>
 
-                          <div className="profile-col card-body">
-                            <p>{item.exhibit_name}</p>
+                          <div className="profile-col card-body overflow-auto mb-2">
+                            <p style={{fontSize:"20px"}}>{item.exhibit_name}</p>
                             <button
-                              style={{float: "right"}}
+                              style={{float: "right", marginLeft:"100px"}}
                               className="profileButton"
                               id="trashprofileButton"
                               onClick={() =>
