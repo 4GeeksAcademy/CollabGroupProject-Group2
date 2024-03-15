@@ -1,25 +1,23 @@
-.animate-charcter
-{
-  
+.animate-charcter {
   background-image: linear-gradient(
     -225deg,
     #1078ce 0%,
     #0b4877 29%,
     #e79c08 67%,
-    #DEB887 100%
+    #deb887 100%
   );
   background-size: auto auto;
   background-clip: border-box;
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
-  text-fill-color: transparent;
+  text-emphasis-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 2s linear infinite;
   display: inline-block;
-      font-size: 190px;
-      margin-top: 55px;
+  font-size: 190px;
+  margin-top: 55px;
 }
 
 @keyframes textclip {
@@ -28,56 +26,53 @@
   }
 }
 
-
-#list{
-    body {
-        font-family: sans-serif;
-        font-family: "Quicksand", sans-serif;
-        color: #333;
-        text-indent: 1.5em;
-        font-size: 1.1em;
-        background-color: #eee;
-        width: 96vw;
-        max-width: 600px;
-        margin: 0 auto;
-        
-      }
-      span b {
-        color: #000;
-      }
-      h1 {
-        font-size: 3em;
-        margin-bottom: 0.2em;
-        color: #29627d;
-        text-align: center;
-      }
-      div {
-        background-color: #fff;
-        border: 1px solid #fff;
-        border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-        text-align: center;
-      }
-      div:focus {
-        outline: none;
-      }
-      div div {
-        position: relative;
-        background-color: burlywood;
-        color: #fff;
-        margin: 16px;
-        border-radius: 999px;
-        line-height: 3em;
-        border: none;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-          rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-      }
-      div b {
-        text-decoration: line-through;
-        font-weight: normal;
-        display: none;
-      }
-      
+#list {
+  body {
+    font-family: sans-serif;
+    font-family: "Quicksand", sans-serif;
+    color: #333;
+    text-indent: 1.5em;
+    font-size: 1.1em;
+    background-color: #eee;
+    width: 96vw;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  span b {
+    color: #000;
+  }
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+    color: #29627d;
+    text-align: center;
+  }
+  div {
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    text-align: center;
+  }
+  div:focus {
+    outline: none;
+  }
+  div div {
+    position: relative;
+    background-color: burlywood;
+    color: #fff;
+    margin: 16px;
+    border-radius: 999px;
+    line-height: 3em;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+  div b {
+    text-decoration: line-through;
+    font-weight: normal;
+    display: none;
+  }
 }
 
 .rowAboutUs {
@@ -88,11 +83,29 @@
   box-shadow: 10px 10px 20px rgba(17, 165, 201, 0.4);
 }
 
-.backgroundHome {
-  background-image: url(https://64.media.tumblr.com/d307e7b2d350aac140ab2605ffa80c11/tumblr_ou89v41vtr1s0e6wno1_500.jpg);
-  background-size: 100%;
-}
-
 .lineHome {
   background-color: burlywood;
 }
+
+.carousel {
+  transform: scale(0.5);
+}
+
+/* .backgroundHome {
+  background-image: url(https://64.media.tumblr.com/d307e7b2d350aac140ab2605ffa80c11/tumblr_ou89v41vtr1s0e6wno1_500.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background: #deb887; */
+/* Chrome 10-25, Safari 5.1-6 */
+/* background: -webkit-linear-gradient(
+    to right,
+    rgba(222, 184, 135, 1),
+    rgba(166, 193, 238, 1)
+  ); */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* background: linear-gradient(
+    to right,
+    rgba(222, 184, 135, 1),
+    rgba(166, 193, 238, 1)
+  );
+} */
