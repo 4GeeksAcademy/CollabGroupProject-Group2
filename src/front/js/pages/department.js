@@ -31,9 +31,9 @@ export const Department = (props) => {
   let fallBackURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzqX-q4R4VGGs1ArQpqZ-Y5deWIBVJ97KHOp4bkuQlmg&s";
 
   return (
-    <div>
-      <h1 className="text-center mt-5">{departmentName}</h1>
-      <div className="text-center mt-5 justify-content-center d-flex flex-wrap w-100" id="main">
+    <div id="background">
+      <h1 className="text-center pt-5">{departmentName}</h1>
+      <div className="text-center justify-content-center d-flex flex-wrap w-100" id="main">
         {artPieces.map((item, index) => (
           <div className="rowExhibit" key={index}>
             <div
@@ -66,8 +66,9 @@ export const Department = (props) => {
                   onClick={() => {
                     handleFavorite(item.exhibit_museum_id);
                   }}
+                  style={{"borderStyle": "none","backgroundColor":"none","background": "rgba(0, 0, 255, 0.1)"}}
                 >
-                  <i className={`fas fa-heart ${favorited[item.exhibit_museum_id] ? 'favorited' : ''}`} aria-hidden="true"></i>
+                  <i className={`fas fa-heart ${favorited[item.exhibit_museum_id] ? 'favorited' : ''}`} aria-hidden="true" ></i>
                 </button>
               </div>
             </div>

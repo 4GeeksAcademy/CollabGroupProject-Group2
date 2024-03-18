@@ -97,9 +97,9 @@ export const Profile = () => {
                           </Link>
 
                           <div className="profile-col card-body overflow-auto mb-2">
-                            <p style={{fontSize:"20px"}}>{item.exhibit_name}</p>
+                            <p style={{fontSize:"20px"}}>{item.exhibit_name}</p>&nbsp;&nbsp;&nbsp;
                             <button
-                              style={{float: "right", marginLeft:"100px"}}
+                              style={{float: "right"}}
                               className="profileButton"
                               id="trashprofileButton"
                               onClick={() =>
@@ -109,7 +109,7 @@ export const Profile = () => {
                               <i
                                 className="fas fa-trash text-center"
                                 aria-hidden="true"
-                                style={{ height: "5px" }}
+                                style={{"height": "5px"}}
                                 id= "texttrash"
                               ></i>
                             </button>
