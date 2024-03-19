@@ -1,81 +1,31 @@
-# WebApp boilerplate with React JS and Flask API
+<h1>Welcome to ArtSeekers! 🎨🌍 </h1>
 
-Build web applications using React.js for the front end and python/flask for your backend API.
+<h3>Your Adventure in Art Begins Here!</h3>
+Hey there, ArtSeekers! Ready for a dive into the colorful, dynamic world of art? You've just unlocked the door to not just any gallery, but a bursting playground for art lovers and culture enthusiasts alike. Here, every click leads you to a new discovery, every artwork tells a story, and every moment is an invitation to connect with art in ways you've never imagined.
 
-- Documentation can be found here: https://start.4geeksacademy.com/starters/react-flask
-- Here is a video on [how to use this template](https://www.loom.com/share/f37c6838b3f1496c95111e515e83dd9b)
-- Integrated with Pipenv for package managing.
-- Fast deployment to heroku [in just a few steps here](https://start.4geeksacademy.com/backend/deploy-heroku-posgres).
-- Use of .env file.
-- SQLAlchemy integration for database abstraction.
+<h3>Our Epic Quest 🚀</h3>
+At ArtSeekers, we're on a mission to turn the world into an open gallery—one where art isn't just observed but lived. We believe in the power of art to knit together time, space, and souls, and we've crafted a space where everyone, from the curious newbie to the seasoned art historian, can share in the thrill of discovery.
 
-### 1) Installation:
+<h3>Dive Into a Global Art Party 🎉</h3>
+Joining ArtSeekers means you're not just exploring art; you're RSVPing to the most vibrant, global art party around! Here's what's on the agenda:
+<br>
+<ul>
+<li>Discover and Favorite: Unearth hidden gems and blockbuster masterpieces. Give a thumbs-up to your favorites, shaping the art journey for fellow explorers.</li>
+<li>Personal Art Collections: Love a piece? Click 'favorite', and boom—it's in your virtual gallery. Show off your art persona through your unique collection.</li>
+<li>Interactive Stories: Get lost in the tales behind the canvas, the drama of the art world, and the whispers of history in every brushstroke.</li>
+</ul>
 
-> If you use Github Codespaces (recommended) or Gitpod this template will already come with Python, Node and the Posgres Database installed. If you are working locally make sure to install Python 3.10, Node 
+<h3>Your All-Access Pass to Awesomeness ✨</h3>
+<ul>
+<li>Global Art Showcase: From the ancient to the avant-garde, our art collection spans the globe and time itself.</li>
+<li>Museum Marvels: Wander through virtual departments of the world's most famous museums, no ticket required.</li>
+<li>Favorite Finds: Your favorites list is your personal art diary. Keep track of what moves you and create your own gallery of wonders.</li>
+</ul>
 
-It is recomended to install the backend first, make sure you have Python 3.8, Pipenv and a database engine (Posgress recomended)
+<h3>More Than a Website: An Expedition 🌌</h3>
+With ArtSeekers, every visit is a step into a vast, vivid world of art exploration. We're more than a platform; we're a portal to the past, present, and future of human creativity. Here, every artwork invites you to a party, every story is a treasure hunt, and every member is part of a global crew of art adventurers.
 
-1. Install the python packages: `$ pipenv install`
-2. Create a .env file based on the .env.example: `$ cp .env.example .env`
-3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
+<h3>Embark on Your Art Journey Today! 🚢</h3>
+Ready to set sail on a boundless sea of creativity? Join ArtSeekers now and chart your course through the marvels of art history. Discover, connect, and celebrate with us as we journey through art's endless landscapes, one masterpiece at a time.
 
-| Engine    | DATABASE_URL                                        |
-| --------- | --------------------------------------------------- |
-| SQLite    | sqlite:////test.db                                  |
-| MySQL     | mysql://username:password@localhost:port/example    |
-| Postgress | postgres://username:password@localhost:5432/example |
-
-4. Migrate the migrations: `$ pipenv run migrate` (skip if you have not made changes to the models on the `./src/api/models.py`)
-5. Run the migrations: `$ pipenv run upgrade`
-6. Run the application: `$ pipenv run start`
-
-> Note: Codespaces users can connect to psql by typing: `psql -h localhost -U gitpod example`
-
-### Undo a migration
-
-You are also able to undo a migration by running
-
-```sh
-$ pipenv run downgrade
-```
-
-### Backend Populate Table Users
-
-To insert test users in the database execute the following command:
-
-```sh
-$ flask insert-test-users 5
-```
-
-And you will see the following message:
-
-```
-  Creating test users
-  test_user1@test.com created.
-  test_user2@test.com created.
-  test_user3@test.com created.
-  test_user4@test.com created.
-  test_user5@test.com created.
-  Users created successfully!
-```
-
-### **Important note for the database and the data inside it**
-
-Every Github codespace environment will have **its own database**, so if you're working with more people eveyone will have a different database and different records inside it. This data **will be lost**, so don't spend too much time manually creating records for testing, instead, you can automate adding records to your database by editing ```commands.py``` file inside ```/src/api``` folder. Edit line 32 function ```insert_test_data``` to insert the data according to your model (use the function ```insert_test_users``` above as an example). Then, all you need to do is run ```pipenv run insert-test-data```.
-
-### Front-End Manual Installation:
-
--   Make sure you are using node version 14+ and that you have already successfully installed and runned the backend.
-
-1. Install the packages: `$ npm install`
-2. Start coding! start the webpack dev server `$ npm run start`
-
-## Publish your website!
-
-This boilerplate it's 100% read to deploy with Render.com and Heroku in a matter of minutes. Please read the [official documentation about it](https://start.4geeksacademy.com/deploy).
-
-### Contributors
-
-This template was built as part of the 4Geeks Academy [Coding Bootcamp](https://4geeksacademy.com/us/coding-bootcamp) by [Alejandro Sanchez](https://twitter.com/alesanchezr) and many other contributors. Find out more about our [Full Stack Developer Course](https://4geeksacademy.com/us/coding-bootcamps/part-time-full-stack-developer), and [Data Science Bootcamp](https://4geeksacademy.com/us/coding-bootcamps/datascience-machine-learning).
-
-You can find other templates and resources like this at the [school github page](https://github.com/4geeksacademy/).
+Let the art adventure begin, ArtSeekers! Your treasure map to the art world awaits. 🎨✨
