@@ -99,17 +99,17 @@ export const Home = () => {
             </div>
           </div>
         </div>
-
-        <div id="carouselExample" className="carousel">
+        <div id="carouselExample" className="carousel pb-3">
+        <h1 className="text-center pb-5 text-light">MEMBER FEATURES</h1>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={exhibit1} className="d-block w-100" alt="..." />
+              <img src={exhibit1} className="img-fluid d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src={favorite1} className="d-block w-100" alt="..." />
+              <img src={favorite1} className="img-fluid d-block w-100" alt="..." />
             </div>
-            <div className="carousel-item">
-              <img src={profile1} className="d-block w-100" alt="..." />
+            <div className="carousel-item h-100">
+              <img src={profile1} className="img-fluid d-block w-100" alt="..." />
             </div>
           </div>
           <button
@@ -125,7 +125,7 @@ export const Home = () => {
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next"
+            className="carousel-control-next "
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="next"
