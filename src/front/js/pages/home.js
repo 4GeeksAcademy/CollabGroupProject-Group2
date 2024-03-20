@@ -22,7 +22,7 @@ export const Home = () => {
 
   return (
     <div style={backgroundStyle}>
-      <div className="backgroundHome">
+      <div className="backgroundHome pb-4">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12 text-center">
@@ -34,7 +34,7 @@ export const Home = () => {
             <div className="info">
               <h2>Welcome ArtSeekers,</h2>
               <p>
-                to the digital sanctuary for art enthusiasts and connoisseurs
+                To the digital sanctuary for art enthusiasts and connoisseurs
                 alike. Our platform is more than just a gallery; it's a vibrant
                 community where the masterpieces of the world are at your
                 fingertips, waiting to be explored, rated, and favorited.
@@ -84,32 +84,34 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="row" id="list">
+          <div className="row pb-4" id="list">
             <div>
               <h2>Current Features</h2>
-              <div className="lineHome">View world-class pieces of art</div>
+              <div className="lineHome"><p>View world-class pieces of art</p></div>
               <div className="lineHome">
-                View art within specific departments of featured museums
+                <p>View art within specific departments of featured museums</p>
               </div>
 
               <div className="lineHome">
-                If you love a specific piece of art 'favorite' it and it will
-                save to your profile
+                <p className="p-1">If you love a specific piece of art 'favorite' it and it will
+                save to your profile</p>
               </div>
             </div>
           </div>
         </div>
-
-        <div id="carouselExample" className="carousel">
+        <div id="carouselExample" className="carousel pb-5">
+          <div className="bg-light">
+          <h2 className="text-center">MEMBER FEATURES</h2>
+          </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={exhibit1} className="d-block w-100" alt="..." />
+              <img src={exhibit1} className="img-fluid d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img src={favorite1} className="d-block w-100" alt="..." />
+              <img src={favorite1} className="img-fluid d-block w-100" alt="..." />
             </div>
-            <div className="carousel-item">
-              <img src={profile1} className="d-block w-100" alt="..." />
+            <div className="carousel-item h-100">
+              <img src={profile1} className="img-fluid d-block w-100 h-100" alt="..." />
             </div>
           </div>
           <button
@@ -125,7 +127,7 @@ export const Home = () => {
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next"
+            className="carousel-control-next "
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="next"

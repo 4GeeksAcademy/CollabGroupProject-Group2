@@ -49,6 +49,7 @@
     border: 10px solid black;
     padding: 75px 50px;
     margin-top: 10px;
+    
     background-image: url(https://as1.ftcdn.net/v2/jpg/02/77/30/98/1000_F_277309825_h8RvZkoyBGPDocMtippdfe3497xTrOXO.jpg);
 }
 .rowDepartments {
@@ -56,5 +57,22 @@
     margin: 100px;
     zoom: 110%;
     
+    
 }
+@media (max-width: 600px) {
+    .jumbotron {
+        padding: 10% 20%; /* Ajusta el padding para pantallas pequeñas */
+    }
+    .art-Poster {
+        padding: 20px; /* Menor padding en pantallas pequeñas */
+    }
+    .rowDepartments {
+        margin: 20px; /* Menor margen para pantallas pequeñas */
+        zoom: 100%; /* Se quita el zoom para pantallas pequeñas */
+    }
+    .history {
+        font-size: 12px; /* Aumenta el tamaño de fuente para mejorar legibilidad */
+    }
+}
+
 

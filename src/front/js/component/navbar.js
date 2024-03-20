@@ -63,6 +63,7 @@ useEffect(()=>{
                   </Link>
                 </li>
               {store.token?(
+                
                 <div className="d-flex">
               <li className="nav-item">
                   <Link to="/exhibits" className="nav-link">
@@ -70,12 +71,20 @@ useEffect(()=>{
                   </Link>
                 </li>
 
+               </div>
+              
+                ):''}
+                {store.token?(
+                
+                <div className="d-flex">
+
                 <li className="nav-item">
                   <Link to="/departments" className="nav-link">
                     Departments
                   </Link>
                 </li>
                 </div>
+              
                 ):''}
 
                 <li className="nav-item">
