@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Context } from '../store/appContext';
 import { useNavigate } from 'react-router-dom';
+import "../../styles/login.css";
 
 const Login = () => {
     const { actions } = useContext(Context);
@@ -22,6 +23,7 @@ const Login = () => {
     };
 
     return (
+        <div className="" id="background-color">
         <div className='mx-5 px-5'>
             <h4 className="m-1 p-2 border-bottom">Login</h4>
             {/* Email Input */}
@@ -56,6 +58,7 @@ const Login = () => {
                         Login
                     </button>
                 </div>
+            </div>
             </div>
         </div>
     );

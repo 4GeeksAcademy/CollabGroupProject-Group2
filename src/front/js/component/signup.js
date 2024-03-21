@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../../styles/signup.css";
 
 const SignUp = ({setAuthStatus}) => {
   const [profileName, setprofileName] = useState('');
@@ -34,6 +35,7 @@ const SignUp = ({setAuthStatus}) => {
   };
 
   return (
+    <div className="" id="background-color">
     <div className='mx-5 px-5'>
       <h4 className="m-1 p-2 border-bottom">Sign Up</h4>
       {/* Name Field */}
@@ -94,6 +96,7 @@ const SignUp = ({setAuthStatus}) => {
           Sign Up
         </button>
       </div>
+    </div>
     </div>
   );
 };
