@@ -46,12 +46,14 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </div>
+            <a href="#">Forgot Password?</a>
             <div className="row">
                 <div className='col p-3'>
                     <button className="btn btn-danger" onClick={() => navigate('/signup')}>
                         SIGN UP
                     </button>
                 </div>
+
                 <div className="col text-end p-3">
                     <div>{message}</div> 
                     <button className="btn btn-primary" onClick={loginRedirection}>

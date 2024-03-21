@@ -5,6 +5,7 @@ import exhibit1 from "../../img/exhibit1.png";
 import favorite1 from "../../img/favorite1.png";
 import profile1 from "../../img/profile1.png";
 import background from "../../img/background.png";
+import card from "../../img/card.png";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -84,9 +85,10 @@ export const Home = () => {
             </div>
           </div>
 
-          <div className="row pb-4" id="list">
+
+          <h2 style={{marginTop:"150px", border:"10px solid black", backgroundColor: "white", margin: "0 125px -110px 125px"}} className="text-center">CURRENT FEATURES</h2>
+          <div style={{margin: "5vw", padding: "5vw"}} className="row pb-15" id="list">
             <div>
-              <h2>Current Features</h2>
               <div className="lineHome"><p>View world-class pieces of art</p></div>
               <div className="lineHome">
                 <p>View art within specific departments of featured museums</p>
@@ -99,9 +101,11 @@ export const Home = () => {
             </div>
           </div>
         </div>
+
+
         <div id="carouselExample" className="carousel pb-5">
           <div className="bg-light">
-          <h2 className="text-center">MEMBER FEATURES</h2>
+          <h2 style={{marginTop:"-75px", border:"10px solid black"}} className="text-center">MEMBER FEATURES</h2>
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
@@ -113,6 +117,10 @@ export const Home = () => {
             <div className="carousel-item h-100">
               <img src={profile1} className="img-fluid d-block w-100 h-100" alt="..." />
             </div>
+            <div className="carousel-item h-100">
+              <img src={card} className="img-fluid d-block w-100 h-100" alt="..." />
+            </div>
+
           </div>
           <button
             className="carousel-control-prev"
